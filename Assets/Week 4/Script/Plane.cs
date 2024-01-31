@@ -20,6 +20,8 @@ public class Plane : MonoBehaviour
        points = new List<Vector2>();
        Vector2 currentPosition = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
        points.Add(currentPosition);
+        Debug.Log(points.Count);
+
 
        lineRenderer.positionCount = 1;
        lineRenderer.SetPosition(0, transform.position);
@@ -36,8 +38,7 @@ public class Plane : MonoBehaviour
             lineRenderer.SetPosition(lineRenderer.positionCount - 1, currentPosition);
             lastPosition = currentPosition;
         }
-
-        lastPosition = currentPosition;
+        Debug.Log(points.Count);
     }
 
     private void Start()
