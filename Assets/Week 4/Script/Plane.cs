@@ -13,7 +13,9 @@ public class Plane : MonoBehaviour
     Rigidbody2D rb;
     public float speed = 1;
     public AnimationCurve landing;
-    float landingTimer; 
+    float landingTimer;
+
+    public Sprite[] sprites;
 
     void OnMouseDown()
     {
