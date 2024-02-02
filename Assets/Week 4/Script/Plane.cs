@@ -16,6 +16,7 @@ public class Plane : MonoBehaviour
     float landingTimer;
 
     public Sprite[] sprites;
+    SpriteRenderer sr;
 
     void OnMouseDown()
     {
@@ -50,6 +51,9 @@ public class Plane : MonoBehaviour
         lineRenderer.SetPosition(0, transform.position);
 
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
+
+        sr.sprite = sprites[Random.Range(0, sprites.Length)];
     }
 
     void FixedUpdate()
