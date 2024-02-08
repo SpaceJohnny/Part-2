@@ -49,6 +49,14 @@ public class Knight : MonoBehaviour
             //move rb in fixed update
             destination = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
+
+        //set attack parameter on right mouse button 
+        //(1) is right (0) is left 
+        if (Input.GetMouseButtonDown(1))
+        {
+            animator.SetTrigger("Attack");
+        }
+
         animator.SetFloat("Movement", movement.magnitude);
     }
     private void OnMouseDown()
@@ -65,6 +73,7 @@ public class Knight : MonoBehaviour
         clickOnSelf = false;
     }
 
+    //(float damage) is a parameter
     public void TakeDamage(float damage)
     {
         health -= damage;
@@ -80,6 +89,5 @@ public class Knight : MonoBehaviour
             isDead = false;
             animator.SetTrigger("TakeDamage");
         }
-        
     }
 }
