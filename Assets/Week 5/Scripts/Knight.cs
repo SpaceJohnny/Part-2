@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityEngine.EventSystems;
+
 public class Knight : MonoBehaviour
 {
     Rigidbody2D rb;
@@ -43,7 +45,7 @@ public class Knight : MonoBehaviour
     {
         if (isDead) return;
         //! not clickOnSelf
-        if (Input.GetMouseButtonDown(0) && !clickOnSelf)
+        if (Input.GetMouseButtonDown(0) && !clickOnSelf && !EventSystem.current.IsPointerOverGameObject())
         {
             //click on world space 
             //move rb in fixed update
@@ -66,6 +68,7 @@ public class Knight : MonoBehaviour
         gameObject.SendMessage("TakeDamage", 1);
         //TakeDamage(1);
         //healthbar.TakeDamage(1);
+
     }
     
     private void OnMouseUp()
