@@ -5,14 +5,16 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
+    public float health;
     public Slider slider;
 
     public void Start()
     {
         //the use of player prefrences to store knight's health value
         //same method that i attempted in Knight scipt 
-        slider.value = PlayerPrefs.GetFloat("HealthBarValue", slider.value);
-        //SendMessage("HealthBar", slider.value, SendMessageOptions.DontRequireReceiver);
+        //slider.value = PlayerPrefs.GetFloat("HealthBarValue", slider.value);
+        slider.value = health;
+        SendMessage("HealthBar", slider.value, SendMessageOptions.DontRequireReceiver);
     }
 
     public void TakeDamage(float damage)
@@ -26,6 +28,6 @@ public class HealthBar : MonoBehaviour
     public void SaveHealth()
     {
         //health saved by using PlayerPrefs
-        PlayerPrefs.SetFloat("HealthBarValue", slider.value);
+        PlayerPrefs.GetFloat("HealthBarValue", slider.value);
     }
 }

@@ -22,9 +22,9 @@ public class Knight : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        health = maxHealth;
 
-        //health = PlayerPrefs.GetFloat("health", maxHealth);
+        health = PlayerPrefs.GetFloat("health", maxHealth);
+
         //SendMessage("health", PlayerPrefs.GetFloat("health", maxHealth), SendMessageOptions.DontRequireReceiver);
 
         //the use of player prefrences to store knight's health value
