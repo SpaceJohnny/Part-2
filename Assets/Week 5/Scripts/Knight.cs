@@ -23,7 +23,18 @@ public class Knight : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         health = maxHealth;
+
+        //health = PlayerPrefs.GetFloat("health", maxHealth);
+        //SendMessage("health", PlayerPrefs.GetFloat("health", maxHealth), SendMessageOptions.DontRequireReceiver);
+
+        //the use of player prefrences to store knight's health value
+        //health = PlayerPrefs.GetFloat("KnightHealth", maxHealth);
+        //did not work 
+
         isDead = false;
+
+        //Sync the initial health 
+        //SendMessage("HealthSync", health);
     }
 
     private void FixedUpdate()
@@ -92,5 +103,12 @@ public class Knight : MonoBehaviour
             isDead = false;
             animator.SetTrigger("TakeDamage");
         }
+
+        //health saved by using PlayerPrefs
+        //PlayerPrefs.SetFloat("KnightHealth", health);
+
+        //healthbar.SendMessage("UpdateHealth", health);
     }
+
+
 }

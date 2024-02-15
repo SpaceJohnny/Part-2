@@ -7,8 +7,25 @@ public class HealthBar : MonoBehaviour
 {
     public Slider slider;
 
+    public void Start()
+    {
+        //the use of player prefrences to store knight's health value
+        //same method that i attempted in Knight scipt 
+        slider.value = PlayerPrefs.GetFloat("HealthBarValue", slider.value);
+        //SendMessage("HealthBar", slider.value, SendMessageOptions.DontRequireReceiver);
+    }
+
     public void TakeDamage(float damage)
     {
         slider.value -= damage;
+
+        //save value of health to PlayerPrefs
+        SaveHealth();
+    }
+
+    public void SaveHealth()
+    {
+        //health saved by using PlayerPrefs
+        PlayerPrefs.SetFloat("HealthBarValue", slider.value);
     }
 }
