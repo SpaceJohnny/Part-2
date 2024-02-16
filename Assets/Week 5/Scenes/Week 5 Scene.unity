@@ -431,6 +431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 713981b69c37825459bd8c16e25c9d12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
   slider: {fileID: 327990462}
 --- !u!1 &470019522
 GameObject:
@@ -1959,7 +1960,7 @@ MonoBehaviour:
   speed: 3
   health: 0
   maxHealth: 5
-  healthbar: {fileID: 0}
+  healthbar: {fileID: 327990464}
 --- !u!95 &5206074073621852351
 Animator:
   serializedVersion: 5
@@ -2038,6 +2039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 713981b69c37825459bd8c16e25c9d12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
   slider: {fileID: 327990462}
 --- !u!1 &6593198826325639418
 GameObject:
