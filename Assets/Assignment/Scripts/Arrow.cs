@@ -43,7 +43,7 @@ public class Arrow : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Cowgirl"))
         {
-            Debug.Log ("Cowgirl hit");
+            //Debug.Log ("Cowgirl hit");
             SceneManager.LoadScene("Game Over Screen");
         }
         else

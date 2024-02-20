@@ -8,26 +8,31 @@ using UnityEngine;
 //linear interpolate between two values 
 public class OrangeAlien : MonoBehaviour
 {
-    private Vector3 endPosition = new Vector3(5, -2, 0);
-    private Vector3 startPosition;
+    private Vector3 endValue = new Vector3(3, -1, 0);
+    private Vector3 startValue;
 
+    //changes movement from linear to non-linear 
     public AnimationCurve alienAnimationCurve;
 
-    private float desiredDuration = 10f;
+    //it takes 10 seconds to go from endValue position to startValue Position
+    private float animationTime = 10f;
+    //time passed
     private float elapsedTime;
 
-    // Start is called before the first frame update
     void Start()
     {
-        startPosition = transform.position;
+        startValue = transform.position;
     }
 
-    // Update is called once per frame
     void Update()
     {
+        //using percentage allows for a smoother transition 
+        //instead of time.deltatime
+        //source: https://www.youtube.com/watch?v=MyVY-y_jK1I&list=LL&index=2 
         elapsedTime += Time.deltaTime;
-        float percentageComplete = elapsedTime / desiredDuration;
+        float percentageComplete = elapsedTime / animationTime;
 
-        transform.position = Vector3.Lerp(startPosition, endPosition, percentageComplete);
+        //update position using lerp 
+        transform.position = Vector3.Lerp(startValue, endValue, percentageComplete);
     }
 }

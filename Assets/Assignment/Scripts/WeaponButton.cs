@@ -7,11 +7,11 @@ using UnityEngine;
 public class WeaponButton : MonoBehaviour
 {
     //scene pauses after one arrow has been fired 
+    //fixed 
     public GameObject arrowPrefab;
     public GameObject arrowSpawn;
     private Button button;
 
-    // Start is called before the first frame update
     void Start()
     {
         button = GetComponent<Button>();
