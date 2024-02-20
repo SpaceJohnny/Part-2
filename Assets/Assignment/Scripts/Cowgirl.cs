@@ -24,6 +24,7 @@ public class Cowgirl : MonoBehaviour
     {
         movement = destination - (Vector2)transform.position;
 
+        //stops the animation from bugging out 
         if (movement.magnitude < 0.1)
         {
             movement = Vector2.zero;
@@ -37,7 +38,7 @@ public class Cowgirl : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            //click on world space 
+            //click on world space to move 
             //move rb in fixed update
             destination = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
