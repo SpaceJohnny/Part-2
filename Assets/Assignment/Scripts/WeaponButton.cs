@@ -20,7 +20,7 @@ public class WeaponButton : MonoBehaviour
         button.onClick.AddListener(FireArrow);
     }
 
-    // Update is called once per frame
+    //quaternion.euler (90) to make sure the arrows spawn pointing left 
     void FireArrow()
     {
         Instantiate(arrowPrefab, arrowSpawn.transform.position, Quaternion.Euler(0,0,90));
