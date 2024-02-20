@@ -3,6 +3,7 @@ using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.VisualScripting;
 
 public class Cowgirl : MonoBehaviour
 {
@@ -31,6 +32,27 @@ public class Cowgirl : MonoBehaviour
         }
 
         rb.MovePosition(rb.position + movement.normalized * speed * Time.deltaTime);
+        //Debug.Log(movement.x);
+
+        //play left animation when x value is less than 0 
+        if (movement.x < 0)
+        {
+            animator.SetBool("Left", true);
+        }
+        else
+        {
+            animator.SetBool("Left", false);
+        }
+
+        //play right animation when x value is greater than 0
+        if (movement.x > 0)
+        {
+            animator.SetBool("Right", true);
+        }
+        else
+        {
+            animator.SetBool("Right", false);
+        }
     }
 
     // Update is called once per frame

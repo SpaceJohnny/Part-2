@@ -7,7 +7,8 @@ using UnityEngine;
 public class WeaponButton : MonoBehaviour
 {
     //scene pauses after one arrow has been fired 
-    public Arrow arrowPrefab;
+    public GameObject arrowPrefab;
+    public GameObject arrowSpawn;
     private Button button;
 
     // Start is called before the first frame update
@@ -22,6 +23,6 @@ public class WeaponButton : MonoBehaviour
     // Update is called once per frame
     void FireArrow()
     {
-        Instantiate(arrowPrefab, transform.position, Quaternion.identity);
+        Instantiate(arrowPrefab, arrowSpawn.transform.position, Quaternion.Euler(0,0,90));
     }
 }

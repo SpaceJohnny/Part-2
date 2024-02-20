@@ -18,6 +18,7 @@ public class Arrow : MonoBehaviour
     }
 
     //from missile script week 1
+    //moves without button press
     void Update()
     {
         transform.Translate(0, speed * Time.deltaTime, 0);
@@ -42,6 +43,7 @@ public class Arrow : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Cowgirl"))
         {
+            Debug.Log ("Cowgirl hit");
             SceneManager.LoadScene("Game Over Screen");
         }
         else
