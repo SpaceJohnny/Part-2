@@ -4,28 +4,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class FootballPlayer : MonoBehaviour
 {
     SpriteRenderer sr;
+    Rigidbody2D rb;
     public Color selectedColour;
     public Color unselectedColour;
+    public float speed = 100;
 
     // Start is called before the first frame update
     void Start()
     {
-        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        sr = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
         Selected(false);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     private void OnMouseDown()
     {
-        Selected(true);
+        Controller.SetSelectedPlayer(this);
     }
 
     public void Selected(bool isSelected)
@@ -38,5 +35,10 @@ public class Player : MonoBehaviour
         {
             sr.color = unselectedColour;
         }
+    }
+
+    public void Move(Vector2 direction)
+    {
+        rb.AddForce(direction * speed, ForceMode2D.Impulse);
     }
 }
