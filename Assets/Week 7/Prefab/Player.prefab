@@ -164,7 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedColour: {r: 0.8490566, g: 0.03604484, b: 0.70064986, a: 1}
   unselectedColour: {r: 0.09223281, g: 0.06763971, b: 0.754717, a: 1}
-  speed: 10
+  speed: 50
 --- !u!1 &8392257845338378033
 GameObject:
   m_ObjectHideFlags: 0
