@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using JetBrains.Annotations;
+using TMPro;
 
 public class Controller : MonoBehaviour
 {
@@ -11,8 +12,11 @@ public class Controller : MonoBehaviour
     float charge;
     public float maxCharge = 1;
     Vector2 direction;
+    public static int Score;
+    TextMeshProUGUI textMeshProUGUI; 
 
-    public static int Score; 
+    //Update the UI text 
+    public TextMeshProUGUI scoreTracker;
 
     public static FootballPlayer SelectedPlayer { get; private set; }
 
@@ -26,6 +30,7 @@ public class Controller : MonoBehaviour
         player.Selected(true);
         SelectedPlayer = player;
     }
+
     private void FixedUpdate()
     {
         if (direction != Vector2.zero)
@@ -55,5 +60,9 @@ public class Controller : MonoBehaviour
         {
             direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - SelectedPlayer.transform.position).normalized * charge;
         }
+
+        //scoreTracker.text = "score:" + goalNumber.ToString();
+        //scoreTracker.text = "Score: " + Score.ToString();
+        scoreTracker.text = "Score: " + Score.textMeshProUGUI;
     }
 }
