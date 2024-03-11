@@ -63,6 +63,6 @@ public class Controller : MonoBehaviour
 
         //scoreTracker.text = "score:" + goalNumber.ToString();
         //scoreTracker.text = "Score: " + Score.ToString();
-        scoreTracker.text = "Score: " + Score.textMeshProUGUI;
+        scoreTracker.text = "Score: " + Score;
     }
 }

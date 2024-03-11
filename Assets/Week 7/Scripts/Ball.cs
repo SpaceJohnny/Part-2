@@ -30,7 +30,7 @@ public class Ball : MonoBehaviour
             RespawnBall();
 
             //Controller.goalNumber = Score;
-            Controller.goalNumber = Controller.Score;
+            // Controller.goalNumber = Controller.Score;
         }
     }
 
